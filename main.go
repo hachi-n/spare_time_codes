@@ -2,22 +2,26 @@ package main
 
 import (
 	"fmt"
-	"github.com/hachi-n/awesomeProject/sorts/mergesort"
-	"github.com/hachi-n/awesomeProject/sorts/quicksort"
-	"time"
+	"github.com/hachi-n/awesomeProject/algorithm/sorts/insertionsort"
 )
 
 func main() {
-	slice := []int{6, 3, 0, 5, 5, 1, 8, 2, 9, 4, 7}
+	//nodesMap := map[string]map[string]int{
+	//	"A": {"B": 8, "C": 6},
+	//	"B": {"A": 8, "C": 5, "D": 8, "E": 9},
+	//	"C": {"A": 6, "B": 5, "D": 2, "E": 7},
+	//	"D": {"B": 8, "C": 2, "E": 1, "F": 7},
+	//	"E": {"B": 9, "C": 7, "D": 1, "F": 9},
+	//	"F": {"D": 7, "E": 9},
+	//}
+	//
+	//pathInfo := shortestpath.NewPathInfo(nodesMap)
+	//shortestPath := pathInfo.FindShortestPath("A", "F")
+	//fmt.Println(shorktestPath)
 
-	t1 := time.Now()
-	mergeSortedSlice := mergesort.MergeSort(slice)
-	t2 := time.Now()
-	fmt.Println(t2.Sub(t1), mergeSortedSlice)
+	originalSlice := []int{54, 34, 54, 41, 54, 5, 45, 46, 547, 68, 578, 78, 9, 76, 54, 7, 8, 6, 56, 4564, 5654, 6, 525, 435, 43, 543, 5, 435, 543, 543, 3256, 6, 6, 236}
+	sortedSlice := insertionsort.InsertionSort(originalSlice)
+	// sortedSlice := selectionsort.SelectionSort(originalSlice)
+	fmt.Println(sortedSlice)
 
-	t1 = time.Now()
-	quickSortedSlice := quicksort.QuickSort(slice)
-	t2 = time.Now()
-
-	fmt.Println(t2.Sub(t1), quickSortedSlice)
 }
