@@ -1,11 +1,6 @@
 package main
 
-import (
-	"encoding/json"
-	"fmt"
-	"github.com/hachi-n/spare_time_codes/interfaces/json_marshaler"
-	"os"
-)
+import "fmt"
 
 func main() {
 	//nodesMap := map[string]map[string]int{
@@ -26,16 +21,58 @@ func main() {
 	//// sortedSlice := selectionsort.SelectionSort(originalSlice)
 	//fmt.Println(sortedSlice)
 
-	jsonByte := []byte(`{"name": "mike", "age": 16, "nicknames": ["a","b","c"]}`)
-	obj := new(json_marshaler.Person)
-	if err := json.Unmarshal(jsonByte, obj); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+	//jsonByte := []byte(`{"name": "mike", "age": 16, "nicknames": ["a","b","c"]}`)
+	//obj := new(json_marshaler.Person)
+	//if err := json.Unmarshal(jsonByte, obj); err != nil {
+	//	fmt.Println(err)
+	//	os.Exit(1)
+	//}
+	//
+	//fmt.Println(obj)
+	//
+	//data, _ := json.Marshal(obj)
+	//fmt.Println(string(data))
+
+	// stream.Stream()
+	// stream.GzipWriter()
+	// stream.FileCreate()
+	// stream.FileMerge()
+
+	// stream.CommandStream()
+	// stream.GzipDivider()
+	// stream.CommandStream()
+
+	// plain := "You have a good Pen."
+	// encryptedText := "cy*rko*k*qyyn*Zox8"
+
+	// //fmt.Println(plain)
+	// //s := caesarEncryption(plain)
+	// //fmt.Println(s)
+	// //s = caesarDecryption(s)
+	// //fmt.Println(s)
+
+	// for i := 0; i < 20 ; i++ {
+	// 	fmt.Println(caesarDecryption(encryptedText, int32(i)))
+	// }
+
+	fmt.Println("Hello World.")
+
+}
+
+const (
+	slideNum = 10
+)
+
+func caesarEncryption(plainText string) (encryptedText string) {
+	for _, r := range plainText {
+		encryptedText += string(r + slideNum)
 	}
+	return
+}
 
-	fmt.Println(obj)
-
-	data, _ := json.Marshal(obj)
-	fmt.Println(string(data))
-
+func caesarDecryption(encryptedText string, slideNum int32) (plainText string) {
+	for _, r := range encryptedText {
+		plainText += string(r - slideNum)
+	}
+	return
 }
