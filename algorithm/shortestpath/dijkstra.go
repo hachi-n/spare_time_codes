@@ -2,7 +2,6 @@ package shortestpath
 
 import (
 	"fmt"
-	"log"
 	"math"
 )
 
@@ -80,7 +79,7 @@ func findShortestPathKeyValue(m map[string]int) (string, int) {
 	}
 
 	if minimumKey == "" {
-		log.Fatal("system error: maximum weight is %d", math.MaxInt64)
+		// log.Fatal("system error: maximum weight is %d", math.MaxInt64)
 	}
 
 	return minimumKey, minimumValue
