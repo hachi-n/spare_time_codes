@@ -1,7 +1,6 @@
 package p1_3
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -34,8 +33,6 @@ func ConvertSpace2(str string, realLength int) string {
 
 	rLength := realRealLength + blankCount*2
 	r := make([]rune, rLength)
-
-	fmt.Println(rLength)
 	rIndex := 0
 	for _, v := range castedStr {
 		if rIndex == rLength {
